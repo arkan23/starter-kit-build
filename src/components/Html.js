@@ -49,6 +49,10 @@ class Html extends React.Component {
           ))}
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="apple-touch-icon" href="/icon.png" />
+          <script
+            defer
+            src="/fontawesome-free-5.0.6/svg-with-js/js/fontawesome-all.min.js"
+          />
           {styles.map(style => (
             <style
               key={style.id}

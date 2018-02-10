@@ -73,7 +73,6 @@ app.use((err, req, res, next) => {
   }
   next(err);
 });
-
 app.use(passport.initialize());
 
 if (__DEV__) {
