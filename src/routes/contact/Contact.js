@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Contact.css';
 
-import { toggleState } from '../../actions/pageActions';
+import { toggleNavbarDisplay } from '../../actions/pageActions';
 
 class Contact extends React.Component {
   static propTypes = {
@@ -42,7 +42,7 @@ const mapState = state => ({
 });
 
 const mapDispatch = {
-  toggle: toggleState,
+  toggle: toggleNavbarDisplay,
 };
 
 export default connect(mapState, mapDispatch)(withStyles(s)(Contact));
