@@ -33,7 +33,7 @@ nav ul li {
 
 .link {
   text-decoration: none;
-  color: #fff;
+  /* color: #fff;*/
   font-size: 20px;
 }
 
@@ -87,7 +87,39 @@ nav ul li {
 }
 
 .menu {
-  background-color: rgba(74, 74, 74, 0.84);
+  background-color: rgba(51, 55, 65, 1);
+}
+
+.link {
+  color: #6f8686;
+  text-shadow: 0 0 1px rgba(111,134,134,0.3);
+}
+
+.link::before {
+  color: #fff;
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+
+.link:focus::before,
+.link:hover::before {
+  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  opacity: 1;
+}
+
+.link:hover, .link:focus {
+  outline: none;
 }
 
 .TopContent {

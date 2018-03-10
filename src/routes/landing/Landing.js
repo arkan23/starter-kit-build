@@ -18,45 +18,49 @@ import Footer from './shared/Footer';
 import Modal from './shared/Modal';
 import Catalog from './shared/Catalog';
 import Features from './shared/Features';
+import TimeLine from './shared/TimeLine';
+import Calculator from './shared/Calculator';
 import s from './Landing.css';
 
 import {
-  toggleNavbarDisplay,
-  toggleModalDisplay,
+    toggleNavbarDisplay,
+    toggleModalDisplay,
 } from '../../actions/pageActions';
 
 class Landing extends React.Component {
-  static propTypes = {
-    toggleNavbar: PropTypes.func.isRequired,
-    navState: PropTypes.bool.isRequired,
-    toggleModal: PropTypes.func.isRequired,
-    modalState: PropTypes.bool.isRequired,
-  };
+    static propTypes = {
+        toggleNavbar: PropTypes.func.isRequired,
+        navState: PropTypes.bool.isRequired,
+        toggleModal: PropTypes.func.isRequired,
+        modalState: PropTypes.bool.isRequired,
+    };
 
-  render() {
-    const { toggleNavbar, navState, modalState, toggleModal } = this.props;
-    return (
-      <div className={s.mainLayer}>
-        <Navbar navState={navState} toggle={toggleNavbar} />
-        <Header />
-        <Features />
-        <Catalog />
-        <Modal modalState={modalState} toggle={toggleModal} />
-        <Footer />
-        <div />
-      </div>
-    );
-  }
+    render() {
+        const { toggleNavbar, navState, modalState, toggleModal } = this.props;
+        return (
+            <div className={s.mainLayer}>
+                <Navbar navState={navState} toggle={toggleNavbar} />
+                <Header />
+                <Features />
+                <Catalog />
+                <Calculator />
+                <TimeLine />
+                <Modal modalState={modalState} toggle={toggleModal} />
+                <Footer />
+                <div />
+            </div>
+        );
+    }
 }
 
 const mapState = state => ({
-  navState: state.pageActions.navState,
-  modalState: state.pageActions.modalState,
+    navState: state.pageActions.navState,
+    modalState: state.pageActions.modalState,
 });
 
 const mapDispatch = {
-  toggleNavbar: toggleNavbarDisplay,
-  toggleModal: toggleModalDisplay,
+    toggleNavbar: toggleNavbarDisplay,
+    toggleModal: toggleModalDisplay,
 };
 
 export default connect(mapState, mapDispatch)(withStyles(s)(Landing));
