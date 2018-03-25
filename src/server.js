@@ -35,6 +35,7 @@ import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 import configureStore from './store/configureStore';
 import { setRuntimeVariable } from './actions/runtime';
 import config from './config';
+// import connect from './data/mongo/connect';
 
 const app = express();
 
@@ -114,6 +115,8 @@ const graphqlMiddleware = expressGraphQL(req => ({
 }));
 
 app.use('/graphql', graphqlMiddleware);
+
+// connect();
 
 //
 // Register server-side rendering middleware

@@ -78,7 +78,7 @@ class Calculator extends Component {
                                     value={this.state.value}
                                     onChange={this.changeRoomNumber.bind(this)}
                                 >
-                                    <option selected disabled>
+                                    <option disabled>
                                         Количество комнат
                                     </option>
                                     <option value={1}>1 комната</option>
@@ -92,7 +92,7 @@ class Calculator extends Component {
                                     value={this.state.value}
                                     onChange={this.changeRoomType.bind(this)}
                                 >
-                                    <option selected disabled>
+                                    <option disabled>
                                         Тип помещения
                                     </option>
                                     <option value="newBuilding">
@@ -112,7 +112,7 @@ class Calculator extends Component {
                                     value={this.state.value}
                                     onChange={this.changeRoomStyle.bind(this)}
                                 >
-                                    <option selected disabled>
+                                    <option disabled>
                                         Услуги дизайнера
                                     </option>
                                     <option value={1}>Требуются</option>

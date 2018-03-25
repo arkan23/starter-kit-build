@@ -74,7 +74,7 @@ perspective effects (not including the modals and the overlay).
 /* Content styles */
 .mdContent {
   color: #fff;
-  background: #e7bc9d;
+  background: #fff;
   position: relative;
   border-radius: 3px;
   margin: 0 auto;
@@ -84,7 +84,7 @@ perspective effects (not including the modals and the overlay).
   margin: 0;
   padding: 0.4em;
   text-align: center;
-  font-size: 2.4em;
+  font-size: 2em;
   font-weight: 300;
   opacity: 0.8;
   background: rgba(0, 0, 0, 0.1);
@@ -92,7 +92,7 @@ perspective effects (not including the modals and the overlay).
 }
 
 .mdContent > div {
-  padding: 15px 40px 30px;
+  padding: 15px 100px 30px;
   margin: 0;
   font-weight: 300;
   font-size: 1.15em;
@@ -101,6 +101,8 @@ perspective effects (not including the modals and the overlay).
 .mdContent > div p {
   margin: 0;
   padding: 10px 0;
+  color: #2d4373;
+  text-align: center;
 }
 
 .mdContent > div ul {
@@ -781,6 +783,12 @@ perspective effects (not including the modals and the overlay).
   -webkit-transition: all 0.5s 0.1s;
   -moz-transition: all 0.5s 0.1s;
   transition: all 0.5s 0.1s;
+}
+
+.contactName input, .contactPhone input {
+  margin-bottom: 35px;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 @media screen and (max-width: 32em) {

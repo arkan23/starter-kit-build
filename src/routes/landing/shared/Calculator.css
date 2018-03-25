@@ -70,6 +70,6 @@
 
 .formContainer input {
   background-color: transparent !important;
-  width: -webkit-fill-available !important;
+  /*width: -webkit-fill-available !important;*/
   border-radius: 5px !important;
 }

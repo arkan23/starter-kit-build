@@ -25,6 +25,7 @@ import s from './Landing.css';
 import {
     toggleNavbarDisplay,
     toggleModalDisplay,
+    saveUserData,
 } from '../../actions/pageActions';
 
 class Landing extends React.Component {
@@ -33,19 +34,33 @@ class Landing extends React.Component {
         navState: PropTypes.bool.isRequired,
         toggleModal: PropTypes.func.isRequired,
         modalState: PropTypes.bool.isRequired,
+        saveUser: PropTypes.func.isRequired,
+        users: PropTypes.object.isRequired,
     };
 
     render() {
-        const { toggleNavbar, navState, modalState, toggleModal } = this.props;
+        const {
+            toggleNavbar,
+            navState,
+            modalState,
+            toggleModal,
+            saveUser,
+            users,
+        } = this.props;
         return (
             <div className={s.mainLayer}>
                 <Navbar navState={navState} toggle={toggleNavbar} />
-                <Header />
+                <Header modalState={modalState} toggle={toggleModal} />
                 <Features />
                 <Catalog />
                 <Calculator />
                 <TimeLine />
-                <Modal modalState={modalState} toggle={toggleModal} />
+                <Modal
+                    modalState={modalState}
+                    toggle={toggleModal}
+                    saveUser={saveUser}
+                    users={users.data}
+                />
                 <Footer />
                 <div />
             </div>
@@ -61,6 +76,7 @@ const mapState = state => ({
 const mapDispatch = {
     toggleNavbar: toggleNavbarDisplay,
     toggleModal: toggleModalDisplay,
+    saveUser: saveUserData,
 };
 
 export default connect(mapState, mapDispatch)(withStyles(s)(Landing));

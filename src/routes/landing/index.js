@@ -9,17 +9,22 @@
 
 import React from 'react';
 import Landing from './Landing';
+import SaveUser from './mongo.graphql';
 import Layout from '../../components/Layout';
 
 async function action({ client }) {
-  return {
-    title: 'React Landing Kit',
-    component: (
-      <Layout>
-        <Landing />
-      </Layout>
-    ),
-  };
+    const data = await client.query({
+        query: SaveUser,
+    });
+
+    return {
+        title: 'React Landing Kit',
+        component: (
+            <Layout>
+                <Landing users={data} />
+            </Layout>
+        ),
+    };
 }
 
 export default action;

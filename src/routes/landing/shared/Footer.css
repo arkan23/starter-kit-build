@@ -70,12 +70,10 @@ input[type='text'], input[type='password'], input[type='email'], select, textare
   border-radius: 0;
   border: none;
   border: solid 1px;
-  color: inherit;
   display: block;
   outline: 0;
   padding: 0 1em;
   text-decoration: none;
-  width: 100%;
 }
 
 form.alt input[type='text'], form.alt input[type='password'], form.alt input[type='email'], form.alt select, form.alt textarea {
@@ -88,8 +86,12 @@ input[type='text'], input[type='password'], input[type='email'], select, textare
 }
 
 input[type='text'], input[type='password'], input[type='email'], select, textarea {
-  background: rgba(144, 144, 144, 0.075);
+  background: rgba(144, 144, 144, 0.01);
   border-color: rgba(144, 144, 144, 0.25);
+  transition: border-color 0.5s ease;
+}
+input[type='text']:focus, input[type='password']:focus, input[type='email']:focus, select:focus, textarea:focus {
+  border-color: rgba(0, 214, 157, 0.25);
 }
 
 ul.contact {
@@ -167,3 +169,8 @@ ul.contact li a:hover {
   list-style: none;
   padding: 0;
 }
+
+::-webkit-input-placeholder {color: #d8d8d8;}
+::-moz-placeholder {color: #d8d8d8;}/* Firefox 19+ */
+:-moz-placeholder {color: #d8d8d8;}/* Firefox 18- */
+:-ms-input-placeholder {color: #d8d8d8;}

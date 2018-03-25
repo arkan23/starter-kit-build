@@ -14,15 +14,15 @@ import Contact from './Contact';
 const title = 'Contact Us';
 
 function action() {
-  return {
-    chunks: ['contact'],
-    title,
-    component: (
-      <Layout>
-        <Contact title={title} />
-      </Layout>
-    ),
-  };
+    return {
+        chunks: ['contact'],
+        title,
+        component: (
+            <Layout>
+                <Contact title={title} />
+            </Layout>
+        ),
+    };
 }
 
 export default action;
